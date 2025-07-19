@@ -1,0 +1,41 @@
+name: Setup ngrok and Remote Desktop
+
+on:
+  workflow_dispatch:
+
+  jobs:
+    setup-ngrok:
+        runs-on: windows-latest
+            timeout-minutes: 360
+                steps:
+                      - name: Checkout repository
+                              uses: actions/checkout@v3
+
+                                    - name: Download ngrok
+                                            shell: powershell
+                                                  quinox.io/c/bN     Invokngrok-v3-stable-win//binamd64.zip -OutFile ngrok.zip
+                                                            E   if (r(Test-Path -Pap -DestinationPath .
+                                                                      if (!(Test-Path -Pap -DestinationPath .
+                                                                                if (!(Test-Path -Path .\ngrok.exe)) { throw "Ngrok extraction failed" }
+
+                                                                                      - n me: Addun: |
+                                                                                                $env:PAT    - name: Au         e ngrok
+                                                                                                 autht  shell: powershellH_TOKEN
+                                                                                                         _AUTH_TO  N }}
+                                                                                                         
+                                                                                                               - name: En    run: |
+                                                                                                                  sk     Se -ItemPell\Tey -Path "HKLM:\System\CurrenSConnectiet\Control\Terminal Server" -Name "fDenyTSConnectiet\Control\Terminal Server" -Name "fDenyTSConnectiet\Control\Terminal Server" -Name "fDenyTSConnectiet\Control\Terminal Server" -Name "fDenyTlRule -Displa -Vn "P@ssw runneradmin /add
+                                                                                                                  
+                                                                                                                        - name:    run: Start-Process -NoNewWind: powershell
+                                                                                                                          "tcp 338l: powershell
+                                                                                                                                   workflow        Wtay alive."
+                                                                                                                                             whole ($tron-error: trueeep -Seconds 300 }
+                                                                                                                                                     continue-on-error: trueeep -Seconds 300 }
+                                                                                                                                                             continue-on-error: trueeep -Seconds 300 }
+                                                                                                                                                                     continue-on-error: trueeep -Seconds 300 }
+                                                                                                                                                                             continue-on-error: trueeep -Seconds 300 }
+                                                                                                                                                                                     continue-on-error: trueeep -Seconds 300 }
+                                                                                                                                                                                             continue-on-error: trueeep -Seconds 300 }
+                                                                                                                                                                                                     continue-on-error: trueeep -Seconds 300 }
+                                                                                                                                                                                                             continue-on-error: trueeep -Seconds 300 }
+                                                                                                                                                                                                                     continue-on-error: true
