@@ -1,0 +1,50 @@
+name: Setup ngrok and Remote Desktop
+
+on:
+  workflow_dispatch:  # ❗ Sirf manual run allowed
+
+  jo time setup-ngrok:
+      runs-on: windows-latest
+          timeout-minutes: 360
+
+              steps:
+                    - name: Checkout repository
+                            uses: actions/checkout@v3
+
+                                  - name: Download ngrok
+                                          run: |
+                                                    Invoke-WebRequest https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-windows-amd64.zip -OutFile ngrok.zip
+                                                              if (!(Test-Path -Path ngrok.zip)) { throw "Failed to download ngrok" }
+
+                                                                    - name: Extract ngrok
+                                                                            run: |
+                                                                                      Expand-Archive ngrok.zip -DestinationPath .
+                                                                                                if (!(Test-Path -Path .\ngrok.exame: Uphrow "Failed to extract ngrok" }
+
+                                                                                                      - name: Update ngrAuthent    run: .\ngrok.exe update
+                                                                                                      
+                                                                                                            - name: Authenticate with ngrok
+                                                                                                                    run: .\ngrok.exe authtoken $Env:NGROK_AUTH_TOKEN
+                                                                                                                            env:
+                                                                                                                                      NGROK_AUTH_TOKEN: ${{ secrets.NGROK_AUTH_TOKEN }}
+                                                                                                                                      
+                                                                                                                                            - name: Enable Remote Desktop
+                                                                                                                                                    run: |
+                                                                                                                                                              Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Contoup "0
+                                                                                                                                                                       top"
+                                                                                                                                                                       le-NetFirewallRule -DisplayGroup "Remote Desktop"
+                                                                                                                                                                                 Set-ItemProperty -Path "Remote Desktop"rrentControlSet\temProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp' -name "UserAuthentication" -Value 1
+                                                                                                                                                                                           Set-LocalUser -Name "runneradmin" -Password (ConvertTo-SecureString -AsPlainText "P@ssw0rd!" -Force)
+                                                                                                                                                                                                     if (!(Get-LocalUser -Name "runneradmin")) { throw "Failed to create user" }
+                                                                                                                                                                                                     
+                                                                                                                                                                                                           - name: Create ngrok tunnel to remote desktop
+                                                                                                                                                                                                                   run: |
+                                                                                                                                                                                                                             .\ngrok.exe tcp 3389
+                                                                                                                                                                                                                                 creat if ($LASTEXITCODE -ne 0) { throw "Failed to create ngrok tunnel" }
+                                                                                                                                                                                                                                 
+                                                                                                                                                                                                                                       - name: Keep alive
+                                                                                                                                                                                                                                               run: |
+                                                                                                                                                                                                                                                      he workflow alive          Write-Output "Keeping the workflow alive..."
+                                                                                                                                                                                                                                                                  Start-Sleror: trueds 300
+                                                                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                                                                                    continue-on-error: true
