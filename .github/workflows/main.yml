@@ -1,59 +1,66 @@
 name: Setup ngrok and Remote Desktop
 
 on:
-  workflow_dispatch:  # ❗ Sirf manual run allowed
+  workflow_dispatch:
 
   jobs:
-    setup-utes: 360
-        steps:
-           ows-latest
-               timeout-minutes: 360
-                   steps:
-                         - name: Checkout repositoryDownlo   uses: actions/checkout@v3
+    setup-ngrok:
+        runs-on: windows-latest
+            timeout-minutes: 360
+                steps:
+                      - name: Checkout repository
+                              uses: actions/checkout@v3
 
-                               - name: Download ngrok
-                                       run: |
-                                                 Invoke-WebRequest https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-windows-amd64.zath-OutFile ngrok.zip
-                                                           if (!(Teoad ngh -Path ngrok.zip)) { throw "Failek
-                                                                  load ngrok" }
+                                    - name: Download ngrok
+                                            shell: powershell
+                                                    run: |
+                                                              Invoke-WebRequest https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-windows-amd64.zip -OutFile ngrok.zip
+                                                                        Expand-Archive ngrok.zip -DestinationPath .
+                                                                                  if (!(Test-Path -Path .\ngrok.exe)) { throw "Ngrok extraction failed" }
 
-                                                                        - d-Archive ngrok.zip     tinationPath .
-                                                                                  if (!(Test-Patok.zip -D\ngrok.exe)) { throw "Failed to extract .\ngrok.e
-                                                                                        - name:   - namngrok
-                                                                                                runith ngrok
-                                                                                                        run: .\ngrok.exe authtNken $Env:NGROK_AUTH_TOKEN
-                                                                                                             ROK_AUTH_TOKEN }}
-                                                                                                             
-                                                                                                                   - name: Enable operty -Psktop
-                                                                                                                           rem\CurrentControlSet\Controlerty -Path '  Er' -name "fDenyTSConnections" -Value 0
-                                                                                                                                 esktop"
-                                                                                                                                           SellRule -DisplayGroup "Remote Desktop"
-                                                                                                                                                 ntrolSet\Control\Term-Path 'HKLM:\System\CurrentControlSet\Control\Term-Path 'HKLM:\System\CurrentControlSet\Consrol\Terminal Server\WinStations\RDP-TcpTo-SecureString -AsPlainText "P@ssw0rd!"d (ConvertTo-SecureStrined to create user" }
-                                                                                                                                                 
-                                                                                                                                                       - name:) { throw "Failed to create user" }
-                                                                                                                                                       
-                                                                                                                                                             -   run: |
-                                                                                                                                                                       .\ngr { throw "Failed to crea   run:  tunnel" }
-                                                                                                                                                                       
-                                                                                                                                                                             - name) {
-                                                                                                                                                                                         Write-Outart-Sleep -Secoeds 300
-                                                                                                                                                                                                   }
-                                                                                                                                                                                                           continue-on-error: trueds 300
-                                                                                                                                                                                                                     }
-                                                                                                                                                                                                                             continue-on-error: trueds 300
-                                                                                                                                                                                                                                       }
-                                                                                                                                                                                                                                               continue-on-error: trueds 300
-                                                                                                                                                                                                                                                         }
-                                                                                                                                                                                                                                                                 continue-on-error: trueds 300
-                                                                                                                                                                                                                                                                           }
-                                                                                                                                                                                                                                                                                   continue-on-error: trueds 300
-                                                                                                                                                                                                                                                                                             }
-                                                                                                                                                                                                                                                                                                     continue-on-error: trueds 300
-                                                                                                                                                                                                                                                                                                               }
-                                                                                                                                                                                                                                                                                                                       continue-on-error: trueds 300
-                                                                                                                                                                                                                                                                                                                                 }
-                                                                                                                                                                                                                                                                                                                                         continue-on-error: trueds 300
-                                                                                                                                                                                                                                                                                                                                                   }
-                                                                                                                                                                                                                                                                                                                                                           continue-on-error: trueds 300
-                                                                                                                                                                                                                                                                                                                                                                     }
-                                                                                                                                                                                                                                                                                                                                                                             continue-on-error: true
+                                                                                        l
+                                                                                              Add ngrok to PATH
+                                                                                                      shell:";$PWD"
+                                                                                                                echo "k
+                                                                                                                rok path added"
+                                                                                                                
+                                                                                                                      - name:    run: .\ng ngrok
+                                                                                                                              shell: powerK_AUTH_TOKEN
+                                                                                                                                      env:
+                                                                                                                                                NGROK_AUTH_TOKEN: ${e Remote Desktop
+                                                                                                                                                  H_TOK shell: powershell
+                                                                                                                                                          run: |
+                                                                                                                                                              ktntrolSet\Control\Terminal Server" System"fDenyTSConnectisplayGroup "Remote Desktop"
+                                                                                                                                                                        nelocalgroup eradmistrators runneradmin /add
+                                                                                                                                                                        
+                                                                                                                                                                            hell
+                                                                                                                                                                                    run: |
+                                                                                                                                                                                              Start-Job { .\ngrok.exe tcp 3389 }
+                                                                                                                                                                                                     Ngrok tt-Sleep -Seconds 5
+                                                                                                                                                                                                           name: Keep workfloNgrok e
+                                                                                                                                                                                                                 -Output "Keeping the wo     run:e-Outp"
+                                                                                                                                                                                                                           while ($true) {
+                                                                                                                                                                                                                                       Write-Outp"
+                                                                                                                                                                                                                                                 while ($true) {
+                                                                                                                                                                                                                                                             Write-Outp"
+                                                                                                                                                                                                                                                                       while ($true) {
+                                                                                                                                                                                                                                                                                   Write-Outp"
+                                                                                                                                                                                                                                                                                      -Seconds 300
+                                                                                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                                                                                        continue-on-error: trueds 300
+                                                                                                                                                                                                                                                                                                                  }
+                                                                                                                                                                                                                                                                                                                          continue-on-error: trueds 300
+                                                                                                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                                                                                                            continue-on-error: trueds 300
+                                                                                                                                                                                                                                                                                                                                                      }
+                                                                                                                                                                                                                                                                                                                                                              continue-on-error: trueds 300
+                                                                                                                                                                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                                                                                                                                                                                continue-on-error: trueds 300
+                                                                                                                                                                                                                                                                                                                                                                                          }
+                                                                                                                                                                                                                                                                                                                                                                                                  continue-on-error: trueds 300
+                                                                                                                                                                                                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                                                                                                                                                                                                                    continue-on-error: trueds 300
+                                                                                                                                                                                                                                                                                                                                                                                                                              }
+                                                                                                                                                                                                                                                                                                                                                                                                                                      continue-on-error: trueds 300
+                                                                                                                                                                                                                                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                        continue-on-error: true
