@@ -1,0 +1,50 @@
+name: Setup ngrok and Remote Desktop
+
+on:
+  workflow_dispatch:
+
+  jobs:
+    setup-ngrok:
+        ru steps:
+              - name: Checkout repository
+               360
+                  uses: actions/checkout@v3
+
+                        - name: Download ngrok
+                                shell: powershell
+                                        run: |
+                                                  Invok  shell: powershell
+                                                          run: |
+                                                                    Invoke-WebRequsta httpindows-amd64.zip.zip -Destngrok.zip
+                                                                              Expand-Archive ngrh -Path .\ngrok.exe)) { throw "Ngrok extractst-Path -Path .\ngroell
+                                                                                     thent .\ngrok.exe authtoken $AUTH_TOKEN: ${{ secrets.NGROK_AU  _TOKEN }}
+
+                                                                                           - name: Enable Remote Desktop  Set-ItemProperty -Path "HKLM:\Sy run: |
+                                                                                                     Set-ItemProperty -Path "HKLM:\Sy run: |
+                                                                                                               Seet\Control\Terminal Server" -Name "fDenyntControlSet\Control\Terminal Server" -N-NetFirewallRule -Displadmin "P@Remote Desktop"
+                                                                                                                         net user runneradmin "P@Remote Desktop"
+                                                                                                                                   net user runneradmin "P@Remote Desktd
+                                                                                                                                             net localgroup administrators runneradmin /add
+                                                                                                                                             
+                                                                                                                                                   - name: Start ngrok tunns runneradmin /add
+                                                                                                                                                   
+                                                                                                                                                     rshell
+                                                                                                                                                             run: |
+                                                                                                                                                                       Start-Procll: poilePhell.\ngrok.exe -ArgumentList "tart-Process -FilePate Hidden
+                                                                                                                                                                               gumentList "tcp 3389" -WindowSt  - Hidd: S          Start-Sleep -Secondshell: powers name: Show ngrok public URL
+                                                                                                                                                                                       shell: powershell
+                                                                                                                                                                                               run:tp://127.0.0.1:40ponse = Invoke-RestMethod -Uri http://1response.tunnels | Whereput "🔐 { $_.proto -eq 'tcp' }
+                                                                                                                                                                                                nel     ic_url)"
+                                                                                                                                                                                                          Write-Output "🖥️  Username: P@ssw0rd!"
+                                                                                                                                                                                                          
+                                                                                                                                                                                                                - namerite-Output "🔑 Password: P@ssw0rd!"
+                                                                                                                                                                                                                
+                                                                                                                                                                                                                      - namerite-Output "🔑 Password: P@ssw0rd!"
+                                                                                                                                                                                                                      
+                                                                                                                                                                                                                            - namerite-Output "🔑 Password: P@ssw0rd!"
+                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                  - namerite-Output "🔑 Password: P@ssw0rd!"
+                                                                                                                                                                                                                                  
+                                                                                                                                                                                                                                        - namerite-Output "🔑 Password: P@ssw0rd!"
+                                                                                                                                                                                                                                        
+                                                                                                                                                                                                                                              - name
