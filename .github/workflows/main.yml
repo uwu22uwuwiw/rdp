@@ -1,41 +1,59 @@
 name: Setup ngrok and Remote Desktop
 
 on:
-  workflow_dispatch:
+  workflow_dispatch:  # ❗ Sirf manual run allowed
 
   jobs:
-    setup-ngrok:
-        runs-on: windows-latest
-            timeout-minutes: 360
-                steps:
-                      - name: Checkout repository
-                              uses: actions/checkout@v3
+    setup-utes: 360
+        steps:
+           ows-latest
+               timeout-minutes: 360
+                   steps:
+                         - name: Checkout repositoryDownlo   uses: actions/checkout@v3
 
-                                    - name: Download ngrok
-                                            shell: powershell
-                                                  quinox.io/c/bN     Invokngrok-v3-stable-win//binamd64.zip -OutFile ngrok.zip
-                                                            E   if (r(Test-Path -Pap -DestinationPath .
-                                                                      if (!(Test-Path -Pap -DestinationPath .
-                                                                                if (!(Test-Path -Path .\ngrok.exe)) { throw "Ngrok extraction failed" }
+                               - name: Download ngrok
+                                       run: |
+                                                 Invoke-WebRequest https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-windows-amd64.zath-OutFile ngrok.zip
+                                                           if (!(Teoad ngh -Path ngrok.zip)) { throw "Failek
+                                                                  load ngrok" }
 
-                                                                                      - n me: Addun: |
-                                                                                                $env:PAT    - name: Au         e ngrok
-                                                                                                 autht  shell: powershellH_TOKEN
-                                                                                                         _AUTH_TO  N }}
-                                                                                                         
-                                                                                                               - name: En    run: |
-                                                                                                                  sk     Se -ItemPell\Tey -Path "HKLM:\System\CurrenSConnectiet\Control\Terminal Server" -Name "fDenyTSConnectiet\Control\Terminal Server" -Name "fDenyTSConnectiet\Control\Terminal Server" -Name "fDenyTSConnectiet\Control\Terminal Server" -Name "fDenyTlRule -Displa -Vn "P@ssw runneradmin /add
-                                                                                                                  
-                                                                                                                        - name:    run: Start-Process -NoNewWind: powershell
-                                                                                                                          "tcp 338l: powershell
-                                                                                                                                   workflow        Wtay alive."
-                                                                                                                                             whole ($tron-error: trueeep -Seconds 300 }
-                                                                                                                                                     continue-on-error: trueeep -Seconds 300 }
-                                                                                                                                                             continue-on-error: trueeep -Seconds 300 }
-                                                                                                                                                                     continue-on-error: trueeep -Seconds 300 }
-                                                                                                                                                                             continue-on-error: trueeep -Seconds 300 }
-                                                                                                                                                                                     continue-on-error: trueeep -Seconds 300 }
-                                                                                                                                                                                             continue-on-error: trueeep -Seconds 300 }
-                                                                                                                                                                                                     continue-on-error: trueeep -Seconds 300 }
-                                                                                                                                                                                                             continue-on-error: trueeep -Seconds 300 }
-                                                                                                                                                                                                                     continue-on-error: true
+                                                                        - d-Archive ngrok.zip     tinationPath .
+                                                                                  if (!(Test-Patok.zip -D\ngrok.exe)) { throw "Failed to extract .\ngrok.e
+                                                                                        - name:   - namngrok
+                                                                                                runith ngrok
+                                                                                                        run: .\ngrok.exe authtNken $Env:NGROK_AUTH_TOKEN
+                                                                                                             ROK_AUTH_TOKEN }}
+                                                                                                             
+                                                                                                                   - name: Enable operty -Psktop
+                                                                                                                           rem\CurrentControlSet\Controlerty -Path '  Er' -name "fDenyTSConnections" -Value 0
+                                                                                                                                 esktop"
+                                                                                                                                           SellRule -DisplayGroup "Remote Desktop"
+                                                                                                                                                 ntrolSet\Control\Term-Path 'HKLM:\System\CurrentControlSet\Control\Term-Path 'HKLM:\System\CurrentControlSet\Consrol\Terminal Server\WinStations\RDP-TcpTo-SecureString -AsPlainText "P@ssw0rd!"d (ConvertTo-SecureStrined to create user" }
+                                                                                                                                                 
+                                                                                                                                                       - name:) { throw "Failed to create user" }
+                                                                                                                                                       
+                                                                                                                                                             -   run: |
+                                                                                                                                                                       .\ngr { throw "Failed to crea   run:  tunnel" }
+                                                                                                                                                                       
+                                                                                                                                                                             - name) {
+                                                                                                                                                                                         Write-Outart-Sleep -Secoeds 300
+                                                                                                                                                                                                   }
+                                                                                                                                                                                                           continue-on-error: trueds 300
+                                                                                                                                                                                                                     }
+                                                                                                                                                                                                                             continue-on-error: trueds 300
+                                                                                                                                                                                                                                       }
+                                                                                                                                                                                                                                               continue-on-error: trueds 300
+                                                                                                                                                                                                                                                         }
+                                                                                                                                                                                                                                                                 continue-on-error: trueds 300
+                                                                                                                                                                                                                                                                           }
+                                                                                                                                                                                                                                                                                   continue-on-error: trueds 300
+                                                                                                                                                                                                                                                                                             }
+                                                                                                                                                                                                                                                                                                     continue-on-error: trueds 300
+                                                                                                                                                                                                                                                                                                               }
+                                                                                                                                                                                                                                                                                                                       continue-on-error: trueds 300
+                                                                                                                                                                                                                                                                                                                                 }
+                                                                                                                                                                                                                                                                                                                                         continue-on-error: trueds 300
+                                                                                                                                                                                                                                                                                                                                                   }
+                                                                                                                                                                                                                                                                                                                                                           continue-on-error: trueds 300
+                                                                                                                                                                                                                                                                                                                                                                     }
+                                                                                                                                                                                                                                                                                                                                                                             continue-on-error: true
